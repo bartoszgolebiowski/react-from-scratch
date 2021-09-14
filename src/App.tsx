@@ -21,7 +21,7 @@ const useStyles = createUseStyles({
   }
 });
 
-const App: React.FunctionComponent = () => {
+const App = () => {
   const classes = useStyles();
 
   return (
