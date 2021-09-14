@@ -1,16 +1,34 @@
 import React from "react";
+import { createUseStyles } from "react-jss";
 
-function App() {
-  const [state, setState] = React.useState(Math.random() * 100);
+const useStyles = createUseStyles({
+  myButton: {
+    color: "green",
+    margin: {
+      // jss-plugin-expand gives more readable syntax
+      top: 5, // jss-plugin-default-unit makes this 5px
+      right: 0,
+      bottom: 0,
+      left: "1rem"
+    },
+    "& span": {
+      // jss-plugin-nested applies this to a child span
+      fontWeight: "bold" // jss-plugin-camel-case turns this into 'font-weight'
+    }
+  },
+  myLabel: {
+    fontStyle: "italic"
+  }
+});
+
+const App: React.FunctionComponent = () => {
+  const classes = useStyles();
 
   return (
-    <div>
-      <h1>Welcome to React App</h1>
-      <h3>Date : {new Date().toDateString()}</h3>
-      <h3>{state}</h3>
-      <button onClick={() => setState(state + 1)}>Click Me</button>
-    </div>
+    <button className={classes.myButton}>
+      <span className={classes.myLabel}>Submit</span>
+    </button>
   );
-}
+};
 
 export default App;
