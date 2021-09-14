@@ -6,13 +6,7 @@
   "scripts": {
     "serve": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "prepare": "husky install",
-    "test": "echo [Husky] test"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "echo [Husky] pre-commit"
-    }
+    "prepare": "husky install"
   },
   "keywords": [
     "webpack",
